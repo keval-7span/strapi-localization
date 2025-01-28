@@ -1,61 +1,72 @@
-# 🚀 Getting started with Strapi
+# Dependencies
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+| Dependencies | Version          |
+|--------------|------------------|
+| NodeJS       | >=v18.0.0 <=v22.x.x |
+| Strapi       | v5.8.1           |
 
-### `develop`
+# Installation Steps
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+Follow the steps below to set up the project:
 
-```
-npm run develop
-# or
-yarn develop
-```
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/keval-7span/strapi-localization.git
+   cd strapi-localization
+   ```
 
-### `start`
+2. **Install NPM Packages**
+   ```bash
+   npm install
+   ```
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+3. **Create an Environment File**
+   ```bash
+   cp .env.example .env
+   ```
 
-```
-npm run start
-# or
-yarn start
-```
+4. **Create a New Database**
+   - Set up a new database in MySQL.
 
-### `build`
+5. **Update Environment Variables**
+   - Open the `.env` file and add your database credentials (e.g., username, password, host, etc.).
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+6. **Build the Admin Panel**
+   ```bash
+   npm run build
+   ```
 
-```
-npm run build
-# or
-yarn build
-```
+7. **Start the Application**
+   ```bash
+   npm run start
+   ```
 
-## ⚙️ Deployment
+8. **Access the Strapi Admin Panel**
+   - Open your browser and navigate to `http://localhost:1337/admin`.
+   - Register a new account to gain access to the admin panel.
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+# Enable Internationalization (i18n)
 
-```
-yarn strapi deploy
-```
+To enable and configure internationalization:
 
-## 📚 Learn more
+1. Navigate to **Settings** in the admin panel.
+2. Open the **Internationalization** tab.
+3. Click on the **Add New Locale** button.
+4. Choose your preferred locale from the dropdown and update the display name if needed.
+   > **Note**: Do not remove "English (en)" from the default localization settings.
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+# Automation
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+The project includes an automation feature for internationalization:
 
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+- When an article is created in the default locale, the lifecycle hook will automatically create entries for all other configured locales.
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+### Additional Information
+
+- Ensure that your NodeJS version is compatible with the specified range.
+- Make sure MySQL is running before starting the application.
+- For troubleshooting, refer to the official Strapi documentation at [Strapi Docs](https://docs.strapi.io/).
+
+---
