@@ -52,14 +52,13 @@ To enable and configure internationalization:
 1. Navigate to **Settings** in the admin panel.
 2. Open the **Internationalization** tab.
 3. Click on the **Add New Locale** button.
-4. Choose your preferred locale from the dropdown and update the display name if needed.
-   > **Note**: Do not remove "English (en)" from the default localization settings.
+4. Choose your preferred locale from the dropdown update the display name if needed and select anyone as the default locale.
 
 # Automation
 
 The project includes an automation feature for internationalization:
 
-- When an article is created in the default locale, the lifecycle hook will automatically create entries for all other configured locales.
+- When an article is created in the default locale, the lifecycle hook automatically creates entries for all other configured locales.
 
 ---
 
